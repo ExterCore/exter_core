@@ -5,11 +5,11 @@ game 'gta5'
 author 'sobing'
 description 'dependency for all script exter.'
 
-version '1.2'
+version '1.3'
 
 shared_scripts {
 	'Common/*.lua',
-	'Config.lua'
+	'Shared/*.lua'
 }
 
 client_scripts {
