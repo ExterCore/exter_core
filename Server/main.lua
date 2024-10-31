@@ -479,7 +479,7 @@ Exter.RegisterUsableItem = function(name, action)
 end
 
 Exter.CheckUpdate = function()
-    PerformHttpRequest("https://api.github.com/repos/tunasayin/exter_core/releases/latest", function(errorCode, rawData, headers) 
+    PerformHttpRequest("https://api.github.com/repos/ExterCore/exter_core/releases/latest", function(errorCode, rawData, headers) 
         if rawData ~= nil then
             local data = json.decode(tostring(rawData))
             local version = string.gsub(data.tag_name, "v", ""):gsub("%.", "")
