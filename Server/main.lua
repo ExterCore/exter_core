@@ -478,20 +478,6 @@ Exter.RegisterUsableItem = function(name, action)
     end
 end
 
-Exter.CheckUpdate = function()
-    PerformHttpRequest("https://api.github.com/repos/ExterCore/exter_core/releases/latest", function(errorCode, rawData, headers) 
-        if rawData ~= nil then
-            local data = json.decode(tostring(rawData))
-            local version = string.gsub(data.tag_name, "v", ""):gsub("%.", "")
-            local installedVersion = GetResourceMetadata(GetCurrentResourceName(), "version", 0):gsub("%.", "")
-
-            if tonumber(installedVersion) < tonumber(version) then
-                Exter.Functions.Log("^3An update is available! You can download the update from this link: " .. data.html_url .. "^7") 
-            end
-        end
-    end)
-end
-
 exports("getSharedObject", function() 
     return Exter
 end)
