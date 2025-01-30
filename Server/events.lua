@@ -8,9 +8,3 @@ AddEventHandler("exter_core:Server:HandleCallback", function(name, payload)
         end)
     end 
 end)
-
-AddEventHandler("onResourceStart", function(resourceName)
-    if GetCurrentResourceName() == resourceName then 
-        Exter.CheckUpdate()
-    end 
-end)
